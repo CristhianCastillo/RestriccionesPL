@@ -52,7 +52,7 @@ public class PanelSalida extends JPanel
         this.setLayout(new BorderLayout());
         
         txtBufferSalida = new JTextArea(10,50);
-        txtBufferSalida.setLineWrap(true);
+        //txtBufferSalida.setLineWrap(true);
         txtBufferSalida.setWrapStyleWord(true);
         JScrollPane scroll = new JScrollPane(txtBufferSalida);
         scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);

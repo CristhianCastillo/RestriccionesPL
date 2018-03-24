@@ -81,6 +81,11 @@ public class PanelParametros extends JPanel implements ActionListener
     private final JLabel lblColumnas;
     
     /**
+     * Etiqueta tipo restricción.
+     */
+    private JLabel lblTipoRestriccion;
+    
+    /**
      * Campo de texto filas.
      */
     private final JTextField txtFilas;
@@ -124,6 +129,7 @@ public class PanelParametros extends JPanel implements ActionListener
         grupoRadios.add(rbtnOrigen);
         grupoRadios.add(rbtnDestion);
         
+        lblTipoRestriccion = new JLabel("Tipo restricciones: ");
         lblFilas = new JLabel("No. Filas: ");
         lblColumnas = new JLabel("No. Columnas: ");
         
@@ -143,19 +149,24 @@ public class PanelParametros extends JPanel implements ActionListener
         pnlBotones.add(btnGenerar);
         pnlBotones.add(btnLimpiar);
         
+        JPanel pnlRadios = new JPanel();
+        pnlRadios.setLayout(new FlowLayout(FlowLayout.LEADING));
+        pnlRadios.add(rbtnOrigen);
+        pnlRadios.add(rbtnDestion);
+        
         grupo.setAutoCreateContainerGaps(true);
         grupo.setAutoCreateGaps(true);
         
         //Set Horizontal
         grupo.setHorizontalGroup(grupo.createSequentialGroup()
                 .addGroup(grupo.createParallelGroup()
-                        .addComponent(rbtnOrigen)
+                        .addComponent(lblTipoRestriccion)
                         .addComponent(lblFilas)
                         .addComponent(lblColumnas)
                 )
                 
                 .addGroup(grupo.createParallelGroup()
-                        .addComponent(rbtnDestion)
+                        .addComponent(pnlRadios)
                         .addComponent(txtFilas)
                         .addComponent(txtColumnas)
                         .addComponent(pnlBotones)
@@ -166,8 +177,8 @@ public class PanelParametros extends JPanel implements ActionListener
         //Set Vertical
         grupo.setVerticalGroup(grupo.createSequentialGroup()
                 .addGroup(grupo.createParallelGroup()
-                        .addComponent(rbtnOrigen)
-                        .addComponent(rbtnDestion)
+                        .addComponent(lblTipoRestriccion)
+                        .addComponent(pnlRadios)
                 )
                 
                 .addGroup(grupo.createParallelGroup()
