@@ -118,7 +118,7 @@ public class PanelParametros extends JPanel implements ActionListener
     public PanelParametros(Controlador ctrl)
     {
         this.ctrl = ctrl;
-        this.setBorder( new TitledBorder("Parametros de Entrada"));
+        this.setBorder( new TitledBorder("Parámetros de Entrada"));
         GroupLayout grupo = new GroupLayout(this);
         this.setLayout(grupo);
         
@@ -136,7 +136,7 @@ public class PanelParametros extends JPanel implements ActionListener
         txtFilas = new JTextField();
         txtColumnas= new JTextField();
         
-        btnGenerar = new JButton("Generar Matriz");
+        btnGenerar = new JButton("Generar matriz");
         btnGenerar.setActionCommand(GENERAR_MATRIZ);
         btnGenerar.addActionListener((ActionListener)this);
         
@@ -217,17 +217,17 @@ public class PanelParametros extends JPanel implements ActionListener
                 String numeroColumnasStr = txtColumnas.getText();
 
                 if(numeroFilasStr.trim().equalsIgnoreCase(""))
-                    throw new Exception("El numero de filas no puede estar vacio.");
+                    throw new Exception("El número de filas no puede estar vacío.");
                 if(numeroColumnasStr.trim().equalsIgnoreCase(""))
-                    throw new Exception("El numero de columnas no puede estar vacio.");
+                    throw new Exception("El número de columnas no puede estar vacío.");
            
                 int numeroFilas = Integer.parseInt(numeroFilasStr);
                 int numeroColumnas = Integer.parseInt(numeroColumnasStr);
                 
                 if(numeroFilas <= 0)
-                    throw new Exception("El numero de filas debe ser mayor a cero.");
+                    throw new Exception("El número de filas debe ser mayor a cero.");
                 if(numeroColumnas <= 0)
-                    throw new Exception("El numero de columnas debe ser mayor a cero.");
+                    throw new Exception("El número de columnas debe ser mayor a cero.");
                 
                 if(rbtnOrigen.isSelected())
                     ctrl.generarRestriccionesOrigen(numeroFilas, numeroColumnas);
@@ -236,7 +236,7 @@ public class PanelParametros extends JPanel implements ActionListener
             }
             catch(Exception ex)
             {
-                JOptionPane.showMessageDialog(this, ex.getMessage(), "Generar Matriz", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, ex.getMessage(), "Generar matriz", JOptionPane.ERROR_MESSAGE);
             }
         }
         else if(comando.equalsIgnoreCase(LIMPIAR))
